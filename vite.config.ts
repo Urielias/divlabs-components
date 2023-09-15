@@ -11,7 +11,7 @@ export default defineConfig({
         },
         rollupOptions: {
           // Externalize dependencies, if needed
-          external: ['vue'], // Example for Vue.js
+          external: ['react'], // Example for Vue.js
           output: {
             // Specify the formats you want to build (e.g., esm, cjs, and umd)
             format: "cjs",
