@@ -59,7 +59,7 @@ const VideoScroll = (props: VideoScrollProps) => {
                 <div
                     className="scroll-content"
                     style={{
-                        minWidth: `${Math.round((lengthScroll || 1) * 100)}%`,
+                        minWidth: `${Math.round((lengthScroll || 2) * 100)}%`,
                     }}
                 ></div>
             </div>
