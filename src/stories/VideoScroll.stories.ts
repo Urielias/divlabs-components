@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        video: "https://file.notion.so/f/f/ebe45e49-06f7-4e3d-a9d0-4d2e237b91e3/db455fb6-c503-46d7-981f-059b4097760b/230913_Story_1_-_Internet_Users.mp4?id=d737fe03-878c-427d-b03b-7275ada26b33&table=block&spaceId=ebe45e49-06f7-4e3d-a9d0-4d2e237b91e3&expirationTimestamp=1694851200000&signature=bQ5uyCzdO_EGd12iGkXMLy6B689NmFswQGlMv2PbePs&downloadName=230913_Story+1+-+Internet+Users.mp4",
+        video: "https://www.shutterstock.com/shutterstock/videos/1107153157/preview/stock-footage-square-purple-neon-loop-fps-full-hd-mp-video.webm",
         width: 800,
     },
 };

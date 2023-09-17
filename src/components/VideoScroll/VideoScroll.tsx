@@ -1,4 +1,5 @@
 import "./VideoScroll.css";
+import { throttle } from "lodash";
 import { useRef, useEffect } from "react";
 import { VideoScrollProps } from "./VideoScroll.types";
 
@@ -13,14 +14,14 @@ const VideoScroll = (props: VideoScrollProps) => {
 
         if (!scrollContainer || !video) return;
 
-        const handleScroll = () => {
+        const handleScroll = throttle(() => {
             const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
             const scrollFraction = scrollContainer.scrollLeft / maxScroll;
             const videoDuration = video.duration;
             const targetTime = scrollFraction * videoDuration;
 
             video.currentTime = targetTime;
-        };
+        }, 100);
 
         scrollContainer.addEventListener("scroll", handleScroll);
 
@@ -63,7 +64,7 @@ const VideoScroll = (props: VideoScrollProps) => {
                     }}
                 ></div>
             </div>
-            <video ref={videoRef} width="100%" height="auto">
+            <video ref={videoRef} width="100%" height="auto" preload="preload" playsInline>
                 <source src={video} type="video/mp4" />
             </video>
         </div>
