@@ -4313,7 +4313,7 @@ const v_ = (ge) => {
         const Fn = k.scrollWidth - k.clientWidth, en = k.scrollLeft / Fn, rn = G.duration, Dn = en * rn;
         G.currentTime = Dn;
       });
-    }, 250);
+    }, 50);
     return k.addEventListener("scroll", z), () => {
       k.removeEventListener("scroll", z);
     };
@@ -4344,7 +4344,7 @@ const v_ = (ge) => {
             }
           }
         ) }),
-        /* @__PURE__ */ tt.jsx("video", { ref: Wn, width: "100%", height: "auto", preload: "preload", playsInline: !0, children: /* @__PURE__ */ tt.jsx("source", { src: Zn, type: "video/mp4" }) })
+        /* @__PURE__ */ tt.jsx("video", { ref: Wn, width: "100%", height: "auto", preload: "auto", playsInline: !0, children: /* @__PURE__ */ tt.jsx("source", { src: Zn, type: "video/mp4" }) })
       ]
     }
   );
