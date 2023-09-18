@@ -4309,9 +4309,11 @@ const v_ = (ge) => {
     if (!k || !G)
       return;
     const z = p_.throttle(() => {
-      const Fn = k.scrollWidth - k.clientWidth, en = k.scrollLeft / Fn, rn = G.duration, Dn = en * rn;
-      G.currentTime = Dn;
-    }, 100);
+      window.requestAnimationFrame(() => {
+        const Fn = k.scrollWidth - k.clientWidth, en = k.scrollLeft / Fn, rn = G.duration, Dn = en * rn;
+        G.currentTime = Dn;
+      });
+    }, 250);
     return k.addEventListener("scroll", z), () => {
       k.removeEventListener("scroll", z);
     };
