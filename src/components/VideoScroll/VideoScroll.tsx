@@ -7,6 +7,8 @@ const VideoScroll = (props: VideoScrollProps) => {
     const { video, width, lengthScroll } = props;
     const videoRef = useRef<HTMLVideoElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const [startTouchX, setStartTouchX] = useState(0);
+    const [startScrollLeft, setStartScrollLeft] = useState(0);
     const [scrolling, setScrolling] = useState(false);
 
     const handleScroll = throttle(() => {
@@ -27,14 +29,12 @@ const VideoScroll = (props: VideoScrollProps) => {
 
     useEffect(() => {
         const scrollContainer = scrollContainerRef.current;
-        let startTouchX = 0;
-        let startScrollLeft = 0;
 
         if (!scrollContainer) return;
 
         const handleTouchStart = (e: TouchEvent) => {
-            startTouchX = e.touches[0].clientX;
-            startScrollLeft = scrollContainer.scrollLeft;
+            setStartTouchX(e.touches[0].clientX);
+            setStartScrollLeft(scrollContainer.scrollLeft);
             setScrolling(true);
         };
 
