@@ -23,6 +23,8 @@ const VideoScroll = (props: VideoScrollProps) => {
             const videoDuration = video.duration;
             const targetTime = scrollFraction * videoDuration;
 
+            if (Number.isNaN(targetTime)) return;
+
             video.currentTime = targetTime;
         });
     }, 50);
